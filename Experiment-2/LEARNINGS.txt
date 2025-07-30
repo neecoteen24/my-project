@@ -1,0 +1,15 @@
+Experiment 2 was about creating a Banking UI with Deposit/Withdrawal Buttons and Balance Display.
+
+I tried to design a visually appealing and responsive banking interface using HTML/CSS.
+
+Whats in the UI?
+A simple yet appealing Banking UI that contains a balance section and under it there are two buttons - Deposit and Withdraw.
+It is centered on the page with proper spacing and alignment to look clean and professional.
+It is not responsive yet.
+
+What procedures I have taken?
+Firstly, I have created a html file that consists of a "outer-container" div and an "inner-container" div.
+Inside these created another div tag named balance that displays the balance of the account.
+Under it i have created to buttons namely Deposit and Withdraw.
+
+Then, i have created a css file to add styling to different selectors, starting from the outer-container 

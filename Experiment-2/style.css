@@ -1,7 +1,7 @@
 .outer-container{
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   background-color: whitesmoke;
   border: 5px solid rgb(69, 69, 69) ;
   padding: 5px;
@@ -17,11 +17,12 @@
   text-align: center;
 }
 .balance{
-  padding: 20px;
-  
+  padding: 20px 10px 10px 10px;
+  color: green;
+  font-size: larger;
 }
 .deposit{
-  border: limegreen;
+  border: 2px solid limegreen;
   font-size: medium;
   border-radius: 10px;
   margin: 5px;
@@ -32,13 +33,21 @@
 }
 .withdraw{
   font-size: medium;
-  border: red;
+  border: 2px solid red;
   border-radius: 10px;
   margin: 5px;
   width: 175px;
   height: 50px;
   color: white;
   background-color: red;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  padding-bottom: 20px;
 }
 
 body{
