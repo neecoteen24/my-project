@@ -3,13 +3,22 @@ Experiment 2 was about creating a Banking UI with Deposit/Withdrawal Buttons and
 I tried to design a visually appealing and responsive banking interface using HTML/CSS.
 
 Whats in the UI?
-A simple yet appealing Banking UI that contains a balance section and under it there are two buttons - Deposit and Withdraw.
-It is centered on the page with proper spacing and alignment to look clean and professional.
+
+-A simple yet appealing Banking UI that contains a balance section and under it there are two buttons - Deposit and Withdraw.
+-It is centered on the page with proper spacing and alignment to look clean and professional.
 It is not responsive yet.
 
 What procedures I have taken?
-Firstly, I have created a html file that consists of a "outer-container" div and an "inner-container" div.
+
+-Firstly, I have created a html file that consists of a "outer-container" div and an "inner-container" div.
 Inside these created another div tag named balance that displays the balance of the account.
 Under it i have created to buttons namely Deposit and Withdraw.
 
-Then, i have created a css file to add styling to different selectors, starting from the outer-container 
+-Then, i have created a css file, linked it to html file and added styling to different selectors, starting from the outer-container that has a light color, also added display-flex property to activate the flexbox layout property.
+Then the inner-container that has borders curved, implemented that with border-radius also then added some padding and margin to introduce spacing to the selectors.
+Added colors to the Withdraw: red and Deposit:green button and then aligned them to center and added padding to them.
+Set their respective background-colors and colors as white, as per the given output.
+
+-After carrying out the changes, ive navigated to proper Experiment-2 file in terminal, added, committed and pushed the changes to my git repository.
+
+-Also added and pushed this LEARNINGS file later.
