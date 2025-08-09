@@ -1,31 +1,79 @@
+:root{
+  --bg-color-header:limegreen;
+  --bg-color-footer:limegreen;
+  --bg-color-nav:rgb(214, 214, 214);
+  --bg-color-main:white;
+  --color-main:black;
+}
+
 header{
+  color: white;
   border: 1px solid black;
-  background-color: limegreen;
+  background-color: var(--bg-color-header);
   grid-column:1/span 2;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items:center; 
 }
+
+header h3 {
+  font-size: 1.8rem;
+  padding: 10px;
+}
+header label{
+  padding: 50px;
+  font-size: large;
+}
+
 main{
+  padding: 40px;
   border: 1px solid black;
-  background-color: white;
+  background-color: var(--bg-color-main);
+  color: var(--color-main);
 }
+
+main span{
+  font-size: large;
+}
+
 nav{
+  padding: 50px;
+  color: white;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  background-color: lightgray;
+  background-color: var(--bg-color-nav);
 }
+.discs{
+  color: black;
+}
+
 footer{
+  font-size: larger;
+  text-align: center;
+  color: white;
   border: 1px solid black;
-  background-color: limegreen;
+  background-color: var(--bg-color-footer);
   grid-column:1/span 2;
   padding: 20px;
 }
 
-body{
+.dashboard{
   display: grid;
   grid-template-columns: 200px 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 80px auto 70px;
   height: 100vh;
+}
+
+#toggle {
+  display: none;
+}
+
+input:checked ~ .dashboard  {
+  --bg-color-header:gray;
+  --bg-color-footer:gray;
+  --bg-color-nav:rgb(181, 181, 181);
+  --bg-color-main:black;
+  --color-main:white;
 }

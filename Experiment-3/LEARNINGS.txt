@@ -1,0 +1,47 @@
+Experiment 3 – Creating an Admin Dashboard with Light/Dark Mode Toggle
+
+I worked on building a simple and clean Admin Dashboard layout using HTML and CSS, with a functional light/dark mode toggle.
+
+What’s in the UI?
+
+A header that displays “Admin Dashboard” on the far left and a Dark Mode toggle label on the far right.
+
+A navigation sidebar on the left with links for Home, Users, and Settings.
+
+A main content area that welcomes the admin and serves as a placeholder for charts, tables, or reports.
+
+A footer at the bottom displaying copyright.
+
+A light/dark theme toggle that changes the background and text colors across the whole layout using CSS variables.
+
+What procedures I have taken?
+
+Created an index.html file with a dashboard container divided into three main sections using CSS Grid:
+
+Header – contains the title and toggle label.
+
+Navigation Sidebar – contains navigation links.
+
+Main Content – contains the welcome message and description.
+
+Footer – spans across the bottom.
+
+Added an input checkbox for the dark mode toggle and styled it so that when it is checked, it updates the CSS variables to switch theme colors.
+
+In styles.css, I:
+
+Defined CSS variables for colors in :root.
+
+Styled the header with display: flex and justify-content: space-between so the title is on the left and the toggle label is on the right.
+
+Increased the font size of the header title and dark mode label for better visibility.
+
+Styled the sidebar with padding and a light background for the default theme.
+
+Applied a darker background and light text colors when dark mode is active (using the :checked selector).
+
+Once styling was done, I opened the project in the browser to test the light/dark mode toggle.
+
+Navigated to the proper Experiment-3 folder in terminal, added all changes, committed them, and pushed to my Git repository.
+
+Later, I also added and pushed this LEARNINGS file.

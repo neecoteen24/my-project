@@ -6,18 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
 </head>
-<body>
 
+<body>
+  <input id="toggle" type="checkbox">
+ <div class="dashboard">
   <header><h3>Admin Dashboard</h3>
-    <h3>Dark Mode<input type="checkbox"></h1>
+    <label for="toggle">Dark Mode</label>
   </header>
-  <nav>
-    <a href="/Home">Home</a>
-    <a href="/Users">Users</a>
-    <a href="/Settings">Settings</a>
+  <nav><ul>
+    <li class="discs"><a href="#">Home</a></li>
+    <li class="discs"><a href="#">Users</a></li>
+    <li class="discs"><a href="#">Settings</a></li>
+    </ul>
   </nav>
   <main><h2>Welcome Admin</h2>
-  <h3>This is the main content area. Add charts, tables, reports here.</h3></main>
+  <span>This is the main content area. Add charts, tables, reports here.</span></main>
   <footer>©2025 Admin Panel</footer>
+  </div>
 </body>
 </html>
