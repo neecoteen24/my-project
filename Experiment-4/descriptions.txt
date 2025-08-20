@@ -1,0 +1,59 @@
+Live Character Counter – Description
+
+HTML
+
+Defines the layout: a heading, a textarea for input, and a paragraph to display the character count.
+
+Textarea has a placeholder "Start typing..." and starts empty.
+
+Character counter is initially displayed as "Characters: 0".
+
+
+CSS
+
+Sets background to light gray and uses a clean sans-serif font.
+
+Centers the container with padding, rounded corners, and a subtle shadow.
+
+Styles the textarea with width 90%, height 150px, padding, border, and vertical resizing.
+
+Styles the counter text with spacing, medium font size, and dark gray color.
+
+
+JavaScript (Main Logic)
+
+Selects the textarea and character counter elements using getElementById().
+
+Adds an input event listener to the textarea:
+
+Triggered whenever the user types, deletes, or pastes text.
+
+
+Inside the event:
+
+Gets the current length of the text inside the textarea (.value.length).
+
+Updates the counter’s text (.textContent) to show "Characters: X", where X is the current length.
+
+
+This ensures the counter is always in sync with user input in real time.
+
+
+Functionality
+
+Typing increases the counter.
+
+Deleting decreases the counter.
+
+Clearing the textarea resets the counter to 0.
+
+
+Learning Outcomes
+
+DOM manipulation with getElementById().
+
+Real-time updates using the input event.
+
+Dynamically changing content with .textContent.
+
+Integrating HTML, CSS, and JavaScript for interactivity.
