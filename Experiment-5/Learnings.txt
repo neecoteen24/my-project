@@ -1,0 +1,89 @@
+HTML Structure
+The HTML provides the skeleton of the web page.
+DOCTYPE html is used to ensure proper rendering.
+Inside the body, there is a main container div with the class "container" which holds the entire app.
+An h2 heading labeled "Product List" is added as a section title.
+A select element with the ID "category" is used as a dropdown to filter products by category.
+A div with the ID "product-list" displays products dynamically using JavaScript.
+The script file script.js is included at the bottom of the body so the DOM loads before the JavaScript runs.
+
+CSS Styling
+The body uses a clean, readable font (Tahoma, Geneva, Verdana).
+The container is centered using CSS positioning with top: 50%, left: 50%, and transform: translate(-50%, -50%).
+The background is given a soft color.
+The container has a border, padding, fixed width, rounded corners, and a subtle box shadow for a card appearance.
+The dropdown select has padding, a different background color, border styling, and rounded corners to make it distinct.
+Each product item has padding, a border, margin spacing, background color, and rounded corners to maintain visual separation.
+Overall the CSS is aimed at keeping the UI clean and minimal.
+
+JavaScript Logic
+The main functionality is handled by arrays and functions.
+
+Categories Array
+const categories = ["all", "clothing", "electronics", "books"];
+This array holds the available filter categories. "all" is included to display every product.
+
+Products Array
+const products = [
+  { name: "T-Shirt", category: "clothing" },
+  { name: "Smartphone", category: "electronics" },
+  { name: "Novel", category: "books" },
+  { name: "Jeans", category: "clothing" },
+  { name: "Headphones", category: "electronics" },
+  { name: "Cookbook", category: "books" }
+];
+This is the dataset with product names and categories.
+
+Accessing HTML Elements
+const categorySelect = document.getElementById("category");
+const productList = document.getElementById("product-list");
+
+Loading Categories
+function loadCategories() {
+    categories.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        categorySelect.appendChild(option);
+    });
+}
+This function dynamically creates option elements and capitalizes category names.
+
+Displaying Products
+function displayProducts(filterCategory) {
+    productList.innerHTML = "";
+    products.forEach(product => {
+        if (filterCategory === "all" || product.category === filterCategory) {
+            const div = document.createElement("div");
+            div.classList.add("product");
+            div.textContent = product.name;
+            productList.appendChild(div);
+        }
+    });
+}
+This clears the list each time and appends product elements for the selected category. If "all" is chosen, all products are displayed.
+
+Event Listener
+categorySelect.addEventListener("change", function () {
+    displayProducts(this.value);
+});
+This updates the displayed products when the category changes.
+
+Initialization
+loadCategories();
+displayProducts("all");
+At the start, categories are loaded into the dropdown and all products are displayed.
+
+Final Flow
+When the page loads, categories are inserted into the dropdown.
+All products are displayed initially.
+When a user selects a category, only matching products are displayed.
+The CSS ensures everything is styled and centered on the screen.
+
+What I Learned
+I practiced DOM manipulation and event handling.
+I learned about structuring with HTML, CSS, and JavaScript.
+I saw how even a small dataset can be made interactive with event-driven programming.
+This project demonstrates dynamic filtering without reloading the page.
+
+In summary, the project is a product filter where categories can be chosen from a dropdown and the product list updates dynamically.
