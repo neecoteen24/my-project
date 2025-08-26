@@ -1,13 +1,79 @@
-What I Learned by Creating the Drawing Tool
+Structure of the HTML:
 
-Understanding User Interaction
-I learned how important it is to make a project that responds naturally to what a person does. Creating a space where someone can draw showed me how small details in how the tool works can make it enjoyable or frustrating to use. I saw that thinking about how the user will interact with the drawing area is just as important as making it work.
+<h2> heading for the tool title (“SVG Drawing Tool”).
 
-Design and Visual Planning
-While designing the drawing area, I realized how layout and appearance affect how people feel about using a tool. Making the drawing space clear and simple taught me how much appearance matters for comfort and focus. I learned that good design helps users understand where they can create and what they can do.
+A .container div that wraps around the <svg> canvas.
 
-Importance of Feedback
-This project made me see that showing instant feedback for every action is essential. When a drawing starts with a single touch or click and lines follow the movement, it feels natural and satisfying. Clear feedback at each step helps keep users aware of what is happening and makes using the tool feel smooth.
+A second <h2> footer-style text with attribution (“By Abhijith”).
 
-Creativity and Patience
-By building this project, I experienced how creative ideas can be turned into something that works and can be shared. I also learned that patience and careful attention are needed to arrange each part so that everything feels right. It showed me that combining creativity with steady effort allows simple ideas to become real, interactive experiences.
+<script src="script.js"></script> links the drawing logic.
+
+Initialize variables and setup:
+
+const svg = document.getElementById("drawingArea"); gets the SVG element.
+
+Two state variables control drawing:
+
+drawing → Boolean to track whether the mouse is pressed down.
+
+currentPath → Stores the active <path> element being drawn.
+
+Mouse position calculation:
+
+getMousePosition(evt) calculates exact mouse coordinates inside the SVG:
+
+Uses getBoundingClientRect() to offset page coordinates.
+
+Returns {x, y} relative to the SVG canvas.
+
+Start drawing (mousedown):
+
+When the mouse is pressed inside the SVG:
+
+drawing is set to true.
+
+A new <path> element is created with:
+
+Stroke color = "blue".
+
+Stroke width = 2.
+
+Fill = "none".
+
+Path starts at the mouse coordinates using M x y (move command).
+
+The path is added (appendChild) to the SVG.
+
+Continue drawing (mousemove):
+
+While drawing is true and a path exists:
+
+The script checks if the mouse is still inside the SVG bounds.
+
+If yes, it appends a new line segment using L x y (line command).
+
+The path grows dynamically, creating a freehand effect.
+
+End drawing (mouseup):
+
+When the mouse is released:
+
+drawing is set to false.
+
+currentPath is reset to null, ending the stroke.
+
+CSS Styling:
+
+General body: Arial font, centered text, margin for spacing.
+
+.container: Black border, padding around the canvas.
+
+SVG canvas:
+
+Size: 900px × 650px.
+
+Border: Dark gray (#555).
+
+Background: Light gray (#f8f8f8).
+
+Cursor changes to crosshair for drawing precision.
