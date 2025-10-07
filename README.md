@@ -42,11 +42,13 @@ npm start
 
 ### Having trouble pushing code? 
 
-If you're unable to authenticate your SSH keys or push code to GitHub, please refer to our comprehensive guide:
+If you're unable to authenticate your SSH keys or push code to GitHub, we have guides to help:
 
-📖 **[SSH Authentication Setup Guide](./SSH_SETUP.md)**
+📖 **[Complete SSH Setup Guide](./SSH_SETUP.md)** - Detailed step-by-step instructions
 
-This guide covers:
+⚡ **[Quick SSH Reference](./QUICK_SSH_REFERENCE.md)** - Fast command reference card
+
+These guides cover:
 - Generating SSH keys for your new device
 - Adding SSH keys to GitHub
 - Switching from HTTPS to SSH authentication
