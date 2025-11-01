@@ -1,4 +1,3 @@
-
 name: CI / Build
 
 on:
@@ -15,11 +14,18 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: CI=true npm test -- --watchAll=false
-      - run: npm run build
+          cache-dependency-path: react-projects/Experiment-2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+        working-directory: react-projects/Experiment-2
+      - name: Run tests
+        run: CI=true npm test -- --watchAll=false
+        working-directory: react-projects/Experiment-2
+      - name: Build
+        run: npm run build
+        working-directory: react-projects/Experiment-2
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: ./dist
+          path: react-projects/Experiment-2/dist
