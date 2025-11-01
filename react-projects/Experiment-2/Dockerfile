@@ -1,6 +1,6 @@
 # ---- Stage 1: Build the React app ----
 FROM node:20 AS build
-# Use an official Node image. Using a specific version (node:18) gives reproducibility.
+# Use an official Node image. Using a specific version (node:20) gives reproducibility.
 
 WORKDIR /app
 # Set working directory inside the container.
@@ -10,7 +10,7 @@ COPY package*.json ./
 # If you use yarn, copy yarn.lock instead
 
 RUN npm ci --silent
-# Install dependencies. `npm ci` is preferred in CI and produces deterministic installs.
+# Install dependencies. npm ci is preferred in CI and produces deterministic installs.
 # Doing this before copying source files allows Docker to cache installs when package.json hasn't changed.
 
 COPY . .
