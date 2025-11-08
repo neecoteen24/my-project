@@ -1,81 +1,76 @@
-Objective
+Description:
+This interface is a simple Product List page that displays products in styled cards with their name, price, and stock status.
+It uses React for component-based rendering, HTML for structure, and CSS for layout and styling.
 
-The objective of this experiment is to understand how to design and implement a MongoDB data model using nested documents to represent a real-world e-commerce catalog. It emphasizes the practical application of MongoDB’s flexible schema to handle complex relationships, such as multiple product variants, within a single collection. This experiment aims to strengthen your knowledge of schema design, data modeling, and query handling in MongoDB.
+HTML STRUCTURE & ELEMENT DETAILS
+1. FIELD: Main Wrapper (<main class="app-main">)
+Purpose: Centers the entire product list on the page.
+Contents:
+- Container (<div class="app-container">) — holds title and product list.
 
-Introduction
+2. FIELD: Container (<div class="app-container">)
+Purpose: Provides a bordered, padded box for the product list.
+Contents:
+- Heading (<h1 class="app-title">Products List</h1>) — page title.
+- Product list (<div class="product-list">) — flex container holding product cards.
+Expected Behavior:
+- Center-aligned with padding and border.
+- Title above product cards.
 
-MongoDB is a popular NoSQL database that stores data in a document-oriented format using BSON (Binary JSON). Unlike traditional relational databases, MongoDB allows storing hierarchical or nested data structures directly in a single document. This feature is particularly useful in e-commerce systems where products can have multiple attributes or variants such as color, size, and stock availability.
+3. FIELD: Product List (<div class="product-list">)
+Purpose: Holds all product cards.
+Contents:
+- Multiple ProductCard components.
+Expected Behavior:
+- Items displayed side by side with spacing.
 
-In a conventional relational database, such relationships often require multiple tables and complex joins. MongoDB simplifies this by allowing nested arrays and objects, enabling related information to reside within a single product document. This approach improves performance, reduces the need for joins, and supports dynamic schema evolution.
+4. FIELD: Product Card (<div class="product-card">)
+Purpose: Displays details of a single product.
+Contents:
+- Product name (<h3 class="product-title">)
+- Product price (<p class="product-price">)
+- Stock status (<p>)
+Expected Behavior:
+- Each product card is styled with border, shadow, and rounded corners.
+- Stock status dynamically shows "In Stock" or "Out of Stock".
 
-Experiment Overview
+CSS STYLING BREAKDOWN
+1. ELEMENT: .app-main
+Purpose: Main wrapper layout.
+Key Styles: Flexbox centering, padding.
 
-The experiment focuses on creating a MongoDB collection to represent an e-commerce catalog. Each product in the catalog contains general information such as the product name, price, and category. In addition, each product has an array of variants that capture different options like color, size, and stock levels.
+2. ELEMENT: .app-container
+Purpose: Content box.
+Key Styles: Border, padding, centered text.
 
-Key aspects of this experiment include:
+3. ELEMENT: .app-title
+Purpose: Page heading.
+Key Styles: Bold, larger font size, margin below.
 
-Designing a flexible data model that accommodates multiple variants per product.
+4. ELEMENT: .product-list
+Purpose: Layout for product cards.
+Key Styles: Flex display, gap between items, centered alignment.
 
-Understanding how nested documents are structured in MongoDB.
+5. ELEMENT: .product-card
+Purpose: Individual product container.
+Key Styles: Border, rounded corners, padding, box shadow, fixed width, centered text.
 
-Learning how to query and retrieve both top-level and nested data efficiently.
+6. ELEMENT: .product-title
+Purpose: Product name.
+Key Styles: Bold, margin bottom.
 
-Projecting specific fields from nested documents to minimize data transfer and improve query performance.
+7. ELEMENT: .product-price
+Purpose: Product price text.
+Key Styles: Margin bottom.
 
-Methodology
+REACT FUNCTIONALITY
+1. COMPONENTS:
+- ProductCard: Renders name, price, and stock status of a product.
+- App: Main component rendering the product list.
 
-Data Modeling:
+2. DATA:
+- products: Array of product objects { name, price, inStock }.
 
-Identify the key attributes of a product, including name, price, category, and variants.
-
-Design a nested document structure for variants, ensuring that each variant contains properties like color, size, and stock availability.
-
-This approach mimics real-world product hierarchies and supports complex queries without joining multiple collections.
-
-Data Insertion:
-
-Populate the catalog with sample products to demonstrate different variants.
-
-Ensure that products across various categories include multiple options for testing queries effectively.
-
-Querying and Retrieval:
-
-Retrieve all products to verify data insertion.
-
-Filter products by categories to demonstrate how MongoDB handles selective queries.
-
-Access nested variant information to show how dot notation or similar methods allow filtering based on nested attributes.
-
-Project only relevant fields to optimize performance and reduce unnecessary data retrieval.
-
-Analysis:
-
-Observe how MongoDB stores hierarchical data in a single document.
-
-Analyze the efficiency of queries on nested structures versus traditional relational joins.
-
-Understand how this approach simplifies data management in e-commerce applications.
-
-Observations
-
-Nested documents allow all relevant product information, including variants, to be stored in a single document.
-
-Queries can efficiently access both top-level and nested fields without complex joins.
-
-MongoDB’s schema flexibility supports adding new attributes to products or variants without redesigning the entire collection.
-
-Projecting specific fields helps reduce memory usage and improves query performance.
-
-The structure is highly suitable for e-commerce catalogs where products often have multiple variations.
-
-Conclusion
-
-This experiment demonstrates the power of MongoDB’s nested document structure in modeling complex real-world entities like an e-commerce catalog. You learned how to design flexible and scalable schemas, insert hierarchical data, and perform queries on both top-level and nested fields. This approach reduces database complexity, improves performance, and supports dynamic data requirements, making it ideal for modern applications in retail and other domains.
-
-Applications
-
-E-commerce platforms for product catalogs.
-
-Inventory management systems with multiple product variants.
-
-Content management systems that require flexible and hierarchical data storage.
+3. RENDER LOGIC:
+- App maps over products array to generate ProductCard for each product.
+- Each ProductCard displays details with conditional stock status.
